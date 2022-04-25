@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+        <h1 style="color: rgb(87, 170, 122);">Orders</h1>
+        <div class="d-flex">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">add new order</button>
+        </div>
+    </div>
+</nav>
+<!--navbar navbar-light bg-primary-->
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Order Number</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Buyer Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr *ngFor = "let row of orderData">
+            <td>{{row.id}}</td>
+            <td>{{row.ordernumber}}</td>
+            <td>{{row.Date}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.Address}}</td>
+            <td>{{row.phone}}</td>
+            <td>
+          <button type="button" id="cancel" (click)="onEdit(row)" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button  style="color: aliceblue;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-success" class="btn btn-info">Edit</button>
+                <button (click)="deleteOrder()" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr> -->
+    </tbody>
+</table>
+
+<!-- Button trigger modal -->
+<!--button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button-->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">new order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Order Number</label>
+                  <input type="text" formControlName="orderNumber" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Date</label>
+                    <input type="date" formControlName="Date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" formControlName="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">address</label>
+                  <input type="text" formControlName="address" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">phone no.</label>
+                    <input type="number" formControlName="phoneno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
+                  </div>
+                  
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="postOrderDetails()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
