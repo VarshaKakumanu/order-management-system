@@ -19,19 +19,19 @@
         </tr>
     </thead>
     <tbody>
-        <!-- <tr *ngFor = "let row of orderData">
-            <td>{{row.id}}</td>
-            <td>{{row.ordernumber}}</td>
+        <tr *ngFor = "let row of orderData">
+          <td>{{row.ordernumber}}</td>
             <td>{{row.Date}}</td>
             <td>{{row.name}}</td>
             <td>{{row.Address}}</td>
             <td>{{row.phone}}</td>
+            <td>{{row.id}}</td>
             <td>
-          <button type="button" id="cancel" (click)="onEdit(row)" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button  style="color: aliceblue;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-success" class="btn btn-info">Edit</button>
-                <button (click)="deleteOrder()" class="btn btn-danger mx-3">Delete</button>
+          <!-- <button type="button" id="cancel" (click)="onEdit(row)" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+          <button  style="color: aliceblue;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onEdit(row)" class="btn btn-success" class="btn btn-info">Edit</button>
+                <button (click)="deleteOrder(row)" class="btn btn-danger mx-3">Delete</button>
             </td>
-        </tr> -->
+        </tr>
     </tbody>
 </table>
 
@@ -56,11 +56,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Date</label>
-                    <input type="date" formControlName="Date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
+                    <input type="date" formControlName="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" formControlName="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
+                    <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
                   </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">address</label>
@@ -68,13 +68,15 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">phone no.</label>
-                    <input type="number" formControlName="phoneno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
+                    <input type="text" formControlName="phoneno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">       
                   </div>
                   
               </form>
         </div>
         <div class="modal-footer">
           <button type="button" (click)="postOrderDetails()" class="btn btn-primary">Add</button>
+          <button type="button" (click)="updateDetails()" class="btn btn-primary">update</button>
+
         </div>
       </div>
     </div>

@@ -2,17 +2,22 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "ordernumber": "12344567",
+      "Date": "2022-04-03",
+      "name": "varetdkh",
+      "address": "fgxxch@fcgh",
+      "phone": "234567"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "ordernumber": "2345",
+      "Date": "2022-04-16",
+      "name": "vdrtsrdftyugh",
+      "address": "dsx@sdxfghj",
+      "phone": "2345678"
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
